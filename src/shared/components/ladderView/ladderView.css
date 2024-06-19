@@ -1,0 +1,29 @@
+.ladder-view {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bids, .asks {
+    width: 45%;
+    border: 0px solid #ccc;
+    padding: 10px;
+  }
+  
+  .bid-list, .ask-list {
+    margin-top: 10px;
+  }
+  
+  .bid-item, .ask-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .price {
+    font-weight: bold;
+  }
+  
+  .size {
+    color: #666;
+  }
+  

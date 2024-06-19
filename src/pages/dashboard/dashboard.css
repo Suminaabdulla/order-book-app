@@ -1,0 +1,36 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.top-of-book {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+ 
+.price-chart {
+  margin-bottom: 20px;
+}
+
+.ladder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bids,
+.asks {
+  width: 45%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+  
+.label-input {
+  margin-bottom: 10px;
+}
+  
+.label-input input {
+  padding: 5px;
+}
+  
