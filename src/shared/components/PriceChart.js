@@ -1,32 +1,23 @@
+// PriceChart.js
+
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
-const PriceChart = ({ bids = [], asks = [] }) => {
-  const formattedBids = bids.map((item, index) => ({
-    time: index,
-    price: item.price,
-    size: item.size,
-    type: 'bid'
-  }));
-
-  const formattedAsks = asks.map((item, index) => ({
-    time: index,
-    price: item.price,
-    size: item.size,
-    type: 'ask'
-  }));
-
-  const formattedData = [...formattedBids, ...formattedAsks];
+const PriceChart = ({ data }) => {
 
   return (
-    <LineChart width={1000} height={300} data={formattedData}>
-      <XAxis dataKey="time" />
-      <YAxis  dataKey="price"/>
-      <Tooltip />
-      <CartesianGrid stroke="#f5f5f5" />
-      <Line type="bump" dataKey="price" stroke="#ff7300" yAxisId={0} name="Bid" />
-      <Line type="bump" dataKey="price" stroke="#387908" yAxisId={0} name="Ask" />
-    </LineChart>
+    <div>
+      <h2>Price Chart</h2>
+      <LineChart width={1100} height={350} data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="time" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Line type="monotone" dataKey="bid" stroke="#8884d8" name="Bid Price" />
+        <Line type="monotone" dataKey="ask" stroke="#82ca9d" name="Ask Price" />   
+      </LineChart>
+    </div>
   );
 };
 

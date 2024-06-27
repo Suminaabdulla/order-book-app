@@ -5,7 +5,7 @@ export const StyledBox = styled(Box)(() => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '2rem',
-    backgroundColor: 'grey',
+    backgroundColor: '#333',
     color: 'white',
     width: '100%',
     bottom: 0,

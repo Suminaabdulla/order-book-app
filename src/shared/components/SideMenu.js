@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, List, ListItem, ListItemText, Divider, useTheme } from '@mui/material';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
+import { DASHBOARD_PATH } from '../../routes/routePaths';
 
 const drawerWidth = 240;
 
@@ -29,8 +30,7 @@ const SideMenu = () => {
           button
           component={RouterLink}
           to="/dashboard"
-          selected={location.pathname === '/dashboard'}
-          sx={{ backgroundColor: location.pathname === '/dashboard' ? 'rgba(255,255,255,0.2)' : 'transparent' }}
+          selected={location.pathname === DASHBOARD_PATH}
         >
           <ListItemText primary="Dashboard" />
         </ListItem>
