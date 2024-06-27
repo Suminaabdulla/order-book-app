@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { COINBASE_API_URL, COINBASE_WEBSOCKET_URL } from '../utils/apiConstants';
 
 const useWebSocket = () => {
   const [currencies, setCurrencies] = useState([]);
@@ -11,11 +12,11 @@ const useWebSocket = () => {
   const ws = useRef(null);
   const wsConnected = useRef(false);
 
-  const url = 'https://api.pro.coinbase.com';
+  const url = COINBASE_API_URL;
 
   useEffect(() => {
     const initializeWebSocket = () => {
-      ws.current = new WebSocket('wss://ws-feed.pro.coinbase.com');
+      ws.current = new WebSocket(COINBASE_WEBSOCKET_URL);
 
       ws.current.onopen = () => {
         console.log('WebSocket connection opened');
